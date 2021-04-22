@@ -1,0 +1,5 @@
+{:deps {org.clojure/clojure              {:mvn/version "1.10.1"}
+        com.taoensso/carmine             {:mvn/version "3.1.0"}
+        io.pedestal/pedestal.interceptor {:mvn/version "0.5.8"}
+        meta-merge                       {:mvn/version "1.0.0"}}}
+
