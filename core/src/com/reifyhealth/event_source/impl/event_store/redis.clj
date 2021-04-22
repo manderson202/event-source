@@ -190,12 +190,10 @@
 
   (subscribe [_ subscriber-name event-handler {:keys [start-from stream-id]
                                                :or {stream-id all-events-stream-id}}]
-    (println "subscribing to" subscriber-name)
     ;; First check if we already have a subscription for this subscriber-name
     ;; and create it if it doesn't already exist.
     (when-not (subscription-exists?
                 conn (str stream-prefix stream-id) subscriber-name)
-      (println "subscription does not exist, registering" subscriber-name "for" (str stream-prefix stream-id))
       (redis/wcar
         conn
         (redis/xgroup
@@ -204,7 +202,6 @@
           subscriber-name
           (if (= start-from :latest) "$" "0")
           "MKSTREAM")))
-    (println "scheduling the executor")
     ;; Next, schedule the subscription with the thread pool
     (let [sub {:subscriber-name subscriber-name
                :stream (str stream-prefix stream-id)}
@@ -214,15 +211,11 @@
                 ^Long +subscriber-initial-delay-millis+
                 ^Long +subscriber-delay-millis+
                 TimeUnit/MILLISECONDS)]
-      (println "done, sub map BEFORE")
-      (prn @subscriptions)
       ;; Finally, save our subscription state
       (swap! subscriptions
              mm/meta-merge
              {(str stream-prefix stream-id)
-              {subscriber-name (merge sub {:future fut})}})
-      (println "sub map AFTER")
-      (prn @subscriptions))
+              {subscriber-name (merge sub {:future fut})}}))
     subscriber-name)
 
   (save-snapshot [_ stream-id snapshot]
