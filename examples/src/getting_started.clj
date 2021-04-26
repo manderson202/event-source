@@ -68,7 +68,8 @@
 ;; command handler function, which takes the aggregate state (in our case
 ;; there is none, since this is a brand new account), and the command data,
 ;; which in this case contains the account-type to open. We return an
-;; account-opened event.
+;; account-opened event. Note, each command handler can return 0 or more
+;; events (events are `[event-name data]` tuples).
 ;;
 ;; Like with the defaggregate above, we could have also defined an :id field
 ;; if it were different on the command than the aggregate, and a spec, if we
@@ -92,8 +93,7 @@
 ;; In this command definition, the function leverages the current state to make
 ;; decisions on handling. This also demonstrates it is possible for a command
 ;; to not emit any events.
-(es/defcommand
-  ::change-account-type
+(es/defcommand ::change-account-type
   "Allows changing the type of account between checking and savings"
   :on    ::bank-account
   :emits [::account-type-changed]
