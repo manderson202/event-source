@@ -1,11 +1,11 @@
-(ns com.reifyhealth.event-source.core
+(ns event-source.core
   "Provides the API for defining an event sourced application"
   (:require [clojure.spec.alpha :as s]
-            [com.reifyhealth.event-source.impl.aggregate :as aggregate]
-            [com.reifyhealth.event-source.impl.dispatch :as dispatch]
-            [com.reifyhealth.event-source.impl.registrar :as reg]
-            [com.reifyhealth.event-source.impl.subscription :as subscription]
-            [com.reifyhealth.event-source.impl.event-store.redis :as es-redis])
+            [event-source.impl.aggregate :as aggregate]
+            [event-source.impl.dispatch :as dispatch]
+            [event-source.impl.registrar :as reg]
+            [event-source.impl.subscription :as subscription]
+            [event-source.impl.event-store.redis :as es-redis])
   (:import (java.io Closeable)))
 
 ;;

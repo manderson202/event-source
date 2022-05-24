@@ -1,4 +1,4 @@
-(ns com.reifyhealth.event-source.impl.registrar
+(ns event-source.impl.registrar
   (:require [meta-merge.core :as mm]))
 
 ;;

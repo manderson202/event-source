@@ -1,6 +1,6 @@
-(ns com.reifyhealth.event-source.impl.event-store.redis
+(ns event-source.impl.event-store.redis
   (:require [taoensso.carmine :as redis]
-            [com.reifyhealth.event-source.impl.event-store :as es]
+            [event-source.impl.event-store :as es]
             [meta-merge.core :as mm])
   (:import (java.io Closeable)
            (java.time Instant)

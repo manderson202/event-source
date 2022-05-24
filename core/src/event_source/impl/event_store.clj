@@ -1,4 +1,4 @@
-(ns com.reifyhealth.event-source.impl.event-store)
+(ns event-source.impl.event-store)
 
 (defprotocol EventStore
   (initial-version [this]

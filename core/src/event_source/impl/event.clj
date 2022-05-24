@@ -1,6 +1,6 @@
-(ns com.reifyhealth.event-source.impl.event
+(ns event-source.impl.event
   (:require [clojure.spec.alpha :as s]
-            [com.reifyhealth.event-source.impl.registrar :as reg])
+            [event-source.impl.registrar :as reg])
   (:import (clojure.lang Named)
            (java.time Instant)))
 

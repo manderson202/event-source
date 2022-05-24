@@ -1,8 +1,8 @@
-(ns com.reifyhealth.event-source.impl.aggregate
+(ns event-source.impl.aggregate
   (:require [meta-merge.core :as mm]
-            [com.reifyhealth.event-source.impl.registrar :as reg]
-            [com.reifyhealth.event-source.impl.event-store :as es]
-            [com.reifyhealth.event-source.impl.event :as event])
+            [event-source.impl.registrar :as reg]
+            [event-source.impl.event-store :as es]
+            [event-source.impl.event :as event])
   (:import (java.time Instant)
            (clojure.lang ExceptionInfo)))
 

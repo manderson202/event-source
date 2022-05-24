@@ -1,7 +1,7 @@
-(ns com.reifyhealth.event-source.impl.dispatch
+(ns event-source.impl.dispatch
   (:require [clojure.spec.alpha :as s]
-            [com.reifyhealth.event-source.impl.interceptor :as interceptor]
-            [com.reifyhealth.event-source.impl.registrar :as reg]))
+            [event-source.impl.interceptor :as interceptor]
+            [event-source.impl.registrar :as reg]))
 
 (defn dispatch-command
   [cmd-name data]

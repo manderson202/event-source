@@ -1,8 +1,8 @@
-(ns com.reifyhealth.event-source.impl.interceptor
-  (:require [com.reifyhealth.event-source.impl.aggregate :as aggregate]
-            [com.reifyhealth.event-source.impl.event :as event]
-            [com.reifyhealth.event-source.impl.event-store :as es]
-            [com.reifyhealth.event-source.impl.registrar :as reg]
+(ns event-source.impl.interceptor
+  (:require [event-source.impl.aggregate :as aggregate]
+            [event-source.impl.event :as event]
+            [event-source.impl.event-store :as es]
+            [event-source.impl.registrar :as reg]
             [io.pedestal.interceptor :as interceptor]
             [io.pedestal.interceptor.chain :as int-chain]
             [clojure.spec.alpha :as s])

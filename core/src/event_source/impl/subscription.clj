@@ -1,6 +1,6 @@
-(ns com.reifyhealth.event-source.impl.subscription
-  (:require [com.reifyhealth.event-source.impl.event-store :as es]
-            [com.reifyhealth.event-source.impl.registrar :as reg]))
+(ns event-source.impl.subscription
+  (:require [event-source.impl.event-store :as es]
+            [event-source.impl.registrar :as reg]))
 
 (defn- parse-sub-name
   [n]

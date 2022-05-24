@@ -4,7 +4,7 @@
   a true real-world application.
   "
   (:require [clojure.spec.alpha :as s]
-            [com.reifyhealth.event-source.core :as es])
+            [event-source.core :as es])
   (:import (java.util UUID)))
 
 ;;
